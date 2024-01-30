@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,900&display=swap');
+
+:root {
+	--mainFont: Roboto, Helvetica, Arial, sans-serif;	
+	--logoFont: "Cedarville Cursive";
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-rows: 100px 1fr;
+	font-family: var(--mainFont);
+}
+
+header {
+	background-color: lightblue;
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+	padding: 12px;
+	align-items: center;
+}
+
+.logo {
+	font-size: 2rem;
+	font-family: var(--logoFont);
+}
+
+nav {
+	display: grid;
+	justify-content: end;
+	grid-template-columns: repeat(auto-fit, 120px);
+	gap: 12px;
+	justify-items: end;
+}
+
+button {
+	padding: 8px 12px;
+	border: 2px white solid;
+	background: gray;
+}
+
+#content {
+	background-color: lightgray;
+}
