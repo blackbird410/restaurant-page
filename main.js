@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n___CSS_LOADER_EXPORT___.push([module.id, \"@import url(https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,900&display=swap);\"]);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `:root {\n\t--mainFont: Roboto, Helvetica, Arial, sans-serif;\t\n\t--logoFont: \"Cedarville Cursive\";\n}\n\nbody {\n\tpadding: 0;\n\tmargin: 0;\n\tdisplay: grid;\n\tgrid-template-rows: 100px 1fr;\n\tfont-family: var(--mainFont);\n}\n\nheader {\n\tbackground-color: lightblue;\n\tdisplay: grid;\n\tgrid-template-columns: 1fr 6fr;\n\tpadding: 12px;\n\talign-items: center;\n}\n\n.logo {\n\tfont-size: 2rem;\n\tfont-family: var(--logoFont);\n}\n\nnav {\n\tdisplay: grid;\n\tjustify-content: end;\n\tgrid-template-columns: repeat(auto-fit, 120px);\n\tgap: 12px;\n\tjustify-items: end;\n}\n\nbutton {\n\tpadding: 8px 12px;\n\tborder: 2px white solid;\n\tbackground: gray;\n}\n\n#content {\n\tbackground-color: lightgray;\n}\n`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://restaurant-page/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n___CSS_LOADER_EXPORT___.push([module.id, \"@import url(https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,900&display=swap);\"]);\n___CSS_LOADER_EXPORT___.push([module.id, \"@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,100;1,300&display=swap);\"]);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `:root {\n\t--mainFont: 'Lato', Roboto, Helvetica, Arial, sans-serif;\t\n\t--logoFont: \"Cedarville Cursive\";\n\t--descFont: 'Lato', sans-serif;\n\n\t--headerBg: #141414;\n\t--contentBg: #3b3b3b;\n\n\t--imgSize: 400px;\n}\n\nbody {\n\tpadding: 0;\n\tmargin: 0;\n\tdisplay: grid;\n\tgrid-template-rows: minmax(100px, 15%) 1fr;\n\tfont-family: var(--mainFont);\n}\n\nheader {\n\tbackground-color: var(--headerBg);\n\tdisplay: grid;\n\tgrid-template-columns: repeat(5, 1fr);\n\tpadding: 12px;\n\talign-items: center;\n}\n\n.logo {\n\ttext-align: center;\n\tfont-size: 2rem;\n\tfont-family: var(--logoFont);\n\tcolor: orange;\n\ttext-shadow: #FC0 1px 0 10px;\n}\n\nnav {\n\tgrid-column: 3 / -1;\n\t\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tjustify-content: right;\n\tgap: 12px;\n}\n\nbutton {\n\twidth: fit-content;\n\tpadding: 8px 12px;\n\tborder: none;\n\tbackground: inherit;\n\tcolor: white;\n\tfont-weight: bold;\n}\n\n\n#content {\n\tbackground-color: var(--contentBg);\n\tdisplay: grid;\n}\n\n.picture-container {\n\tdisplay: grid;\n\tjustify-items: center;\n\n\tgrid-template-rows: repeat(auto-fit, minmax(var(--imgSize), 1fr));\n\tgrid-template-columns: repeat(auto-fit, minmax(var(--imgSize), 1fr));\n\tgrid-auto-flow: row;\n\tpadding: 8px;\n}\n\n.description-container {\n\tbackground: black;\n\tcolor: white;\n\ttext-align: center;\n\n\tdisplay: grid;\n\tjustify-content: center;\n\tgrid-template-columns: minmax(400px, 70%);\n}\n\np {\n\tfont-size: 1.5rem;\n\tfont-weight: 300;\n\tline-height: 2rem;\n\tfont-style: italic;\n\tfont-family: var(--descFont);\n}\n\n#learn-more-btn {\n\tjustify-self: center;\n\tborder-radius: 0;\n\tborder: 2px solid white;\n\tfont-weight: 100;\n}\n\nbutton:hover {\n\tbackground-color: white;\n\tcolor: black;\n\tfont-weight: bold;\n}\n\nimg {\n\theight: var(--imgSize);\n\twidth: auto;\n}\n\n@media only screen and (max-width: 600px) {\n\tnav {\n\t\tgrid-column: 2 / -1;\n\n\t}\n}\n`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://restaurant-page/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -116,7 +116,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nfunction newHeader() {\n\t\n\tconst header = document.createElement('header');\n\tconst logo = document.createElement('div');\n\tlogo.classList.add('logo');\n\tlogo.textContent = 'Delicioso';\n\n\tconst nav = document.createElement('nav');\n\tconst btns = [\n\t\t'Hours&Location', 'Menus', 'About', 'Gallery', 'Events', 'Reservations'\n\t\t];\n\tbtns.forEach(btnTitle => {\n\t\tconst btn = document.createElement('button');\n\t\tbtn.textContent = btnTitle;\n\t\tbtn.classList.add('nav-btn');\n\n\t\tnav.appendChild(btn);\n\t});\n\n\theader.appendChild(logo);\n\theader.appendChild(nav);\n\n\treturn header;\n};\n\nfunction content() {\n\tconst c = document.createElement('div');\n\tc.classList.add('content');\n\t\n\n\n\treturn c;\n};\n\ndocument.body.appendChild(newHeader());\ndocument.body.appendChild(content());\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _img_clark_douglas_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/clark-douglas.jpg */ \"./src/img/clark-douglas.jpg\");\n/* harmony import */ var _img_nerfee_mirandilla_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/nerfee-mirandilla.jpg */ \"./src/img/nerfee-mirandilla.jpg\");\n\n\n\n\nfunction newHeader() {\n\t\n\tconst header = document.createElement('header');\n\tconst logo = document.createElement('div');\n\tlogo.classList.add('logo');\n\tlogo.textContent = 'Delicioso';\n\n\tconst nav = document.createElement('nav');\n\tconst btns = [\n\t\t'Hours&Locations', 'Menus', 'About', 'Gallery', 'Events', 'Reservations'\n\t\t];\n\tbtns.forEach(btnTitle => {\n\t\tconst btn = document.createElement('button');\n\t\tbtn.textContent = btnTitle.toUpperCase();\n\t\tbtn.classList.add('nav-btn');\n\n\t\tnav.appendChild(btn);\n\t});\n\n\theader.appendChild(logo);\n\theader.appendChild(nav);\n\n\treturn header;\n};\n\nfunction content() {\n\tconst c = document.createElement('div');\n\tc.id = 'content';\n\n\tconst pictureContainer = document.createElement('div');\n\tpictureContainer.classList.add('picture-container');\n\t\n\t[_img_clark_douglas_jpg__WEBPACK_IMPORTED_MODULE_1__, _img_nerfee_mirandilla_jpg__WEBPACK_IMPORTED_MODULE_2__].forEach(img => { \n\t\t\tconst i = document.createElement('img');\n\t\t\ti.src = img;\n\t\t\ti.alt = 'A plate of italian food';\n\t\t\tpictureContainer.appendChild(i);\n\n\t});\n\tc.appendChild(pictureContainer);\n\n\tconst descriptionContainer = document.createElement('div');\n\tdescriptionContainer.classList.add('description-container');\n\tconst description = document.createElement('p');\n\tdescription.textContent = 'Delicioso is a compilation of lively dining experiences. Delicioso celebrates the best of Italian American dishes with welcoming hospitality and service. Seasonal changes guide the menu of scratch-made pasta made in-house daily, cheeses, antipastis, pizzas and more. Staying true to the Italian dining traditions, Delicioso also offers a \"For the Table\" dining option curated for a family-style experience, offered nightly alongside the full a la carte menu.';\n\tdescriptionContainer.appendChild(description);\n\n\tconst learnMore = document.createElement('button');\n\tlearnMore.id = 'learn-more-btn';\n\tlearnMore.textContent = 'LEARN MORE';\n\n\tdescriptionContainer.appendChild(learnMore);\n\n\tc.appendChild(descriptionContainer);\n\n\treturn c;\n};\n\ndocument.body.appendChild(newHeader());\ndocument.body.appendChild(content());\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/img/clark-douglas.jpg":
+/*!***********************************!*\
+  !*** ./src/img/clark-douglas.jpg ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"c50d1bbfe994608f71df.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/img/clark-douglas.jpg?");
+
+/***/ }),
+
+/***/ "./src/img/nerfee-mirandilla.jpg":
+/*!***************************************!*\
+  !*** ./src/img/nerfee-mirandilla.jpg ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"55d16baeb489274f58dc.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/img/nerfee-mirandilla.jpg?");
 
 /***/ })
 
@@ -171,6 +191,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -185,6 +217,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
