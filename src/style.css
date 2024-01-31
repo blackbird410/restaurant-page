@@ -44,7 +44,7 @@ header {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	align-items: center;
-	margin: 12px;
+	margin: 1.2rem;
 	padding: 12px;
 	border: 2px solid gray;
 }
@@ -225,7 +225,7 @@ img {
 }
 
 .reservation {
-	background-size: max(50%, 350px), contain;
+	background-size: max(70%, 350px), contain;
 	background-repeat: no-repeat;
 	background-position: center;
 
