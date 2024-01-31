@@ -109,6 +109,31 @@ function content() {
 	});
 	c.appendChild(cardsContainer);
 
+	const featuredPress = document.createElement('div');
+	featuredPress.classList.add('featured-press-container');
+	const featuredPressTitle = document.createElement('h1');
+	featuredPressTitle.classList.add('featured-press-title');
+	featuredPressTitle.textContent = 'Featured Press';
+	featuredPress.appendChild(featuredPressTitle);
+
+	press.forEach(p => {
+		const container = document.createElement('div');
+		container.classList.add('press-container');
+
+		const title = document.createElement('div');
+		title.classList.add('press-title');
+		title.textContent = p.title;
+
+		const eventName = document.createElement('div');
+		eventName.classList.add('event-name');
+		eventName.textContent = p.event_name;
+
+		container.appendChild(title);
+		container.appendChild(eventName);
+		featuredPress.appendChild(container);
+	});
+	c.appendChild(featuredPress);
+
 	return c;
 };
 
@@ -117,6 +142,16 @@ function content() {
 
 
 
+const press = [
+	{
+		title: 'Cary Magazine',
+		event_name: '2023 Maggy Awards Best New Restaurant',
+	},
+	{
+		title: 'Thrilist',
+		event_name: 'The Best Italian Restaurants in Atlanta',
+	},
+]
 
 const cards = [
 	{ 

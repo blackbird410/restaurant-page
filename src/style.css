@@ -7,11 +7,20 @@
 	src: url('./great-vibes/GreatVibes-Regular.ttf');
 }
 
+@font-face {
+	font-family: 'copperplate';
+	src: url('./copperplate/OPTICopperplate-Heavy.otf'),
+		url('./copperplate/OPTICopperplate-Light.otf'),
+		url('./copperplate/OPTICopperplate.otf');		
+}
+
 :root {
 	--mainFont: 'Lato', Roboto, Helvetica, Arial, sans-serif;	
 	--logoFont: "Cedarville Cursive";
 	--descFont: 'Lato', sans-serif;
 	--cardTitleFont: 'cursiveFont';
+	--pressTitleFont: 'copperplate', 'Lato', serif;
+	--eventNameFont: Roboto;
 
 	--headerBg: #141414;
 	--contentBg: #3b3b3b;
@@ -25,6 +34,7 @@ body {
 	margin: 0;
 	display: grid;
 	font-family: var(--mainFont);
+	color: white;
 }
 
 header {
@@ -75,7 +85,8 @@ button {
 .picture-container,
 .description-container,
 .cards-container,
-.card-container {
+.card-container, 
+.featured-press-container {
 	display: grid;
 	justify-items: center;
 	justify-content: center;
@@ -91,11 +102,10 @@ button {
 
 .description-container {
 	background: black;
-	color: white;
 	text-align: center;
 
 	grid-template-columns: minmax(300px, 70%);
-	padding: 16px;
+	padding: 48px 16px;
 }
 
 p {
@@ -134,19 +144,22 @@ img {
 
 .card-container {
 	grid-template-columns: repeat(auto-fit, minmax(var(--imgSize), 1fr));
-	color: white;
 	align-items: center;
 	gap: 16px;
 }
 
 
+.card-description,
+.press-title {
+	box-shadow: 5px 5px 10px gray;
+}
 
 .card-description {
 	display: grid;
-	grid-template-rows: 50px 1fr 50px;
+	grid-template-rows: 70px 1fr 50px;
 
 	border: 2px solid white;
-	box-shadow: 5px 5px 10px gray;
+	padding: 16px;
 }
 
 .card-description p {
@@ -166,12 +179,10 @@ img {
 	padding-left: 16px;
 }
 
-.card-image {
-
-}
-
-.card-title {
+.card-title,
+.featured-press-title {
 	font-family: var(--cardTitleFont);
+	font-size: 2rem;
 }
 
 .card-btn {
@@ -181,6 +192,29 @@ img {
 	font-weight: 300;
 	background-color: black;
 	font-family: var(--descFont);
+}
+
+.featured-press-container {
+	gap: 36px;
+	text-align: center;
+
+}
+
+.press-container {
+	justify-self: stretch;
+}
+
+.press-title {
+	font-size: 2rem;
+	border: 2px solid white;
+	padding: 8px;
+	font-family: var(--pressTitleFont);
+}
+
+.event-name {
+	font-size: 1.5rem;
+	font-family: var(--eventNameFont);
+	font-weight: 100;
 }
 
 @media only screen and (max-width: 600px) {
