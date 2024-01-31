@@ -46,6 +46,7 @@ header {
 	align-items: center;
 	margin: 12px;
 	padding: 12px;
+	border: 2px solid gray;
 }
 
 .logo {
@@ -196,13 +197,17 @@ img {
 }
 
 .featured-press-container {
-	gap: 36px;
+	row-gap: 36px;
 	text-align: center;
-
+	
+	grid-template-rows: 80px repeat(auto-fit, minmax(100px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	justify-items: center;
 }
 
-.press-container {
-	justify-self: stretch;
+.featured-press-title {
+	grid-column: 1 / -1;
+	align-self: center;
 }
 
 .press-title {

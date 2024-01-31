@@ -178,7 +178,7 @@ const press = [
 		event_name: '2023 Maggy Awards Best New Restaurant',
 	},
 	{
-		title: 'Thrilist',
+		title: 'Thrillist',
 		event_name: 'The Best Italian Restaurants in Atlanta',
 	},
 ]
