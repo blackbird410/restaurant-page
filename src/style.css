@@ -77,9 +77,9 @@ button {
 #content {
 	background-color: var(--contentBg);
 	display: grid;
-	padding-top: min(150px, 40%);
+	padding: min(150px, 40%) 0 50px 0;
 	align-items: center;
-	gap: 16px;
+	gap: 1.5rem;
 }
 
 .picture-container,
@@ -217,6 +217,51 @@ img {
 	font-size: 1.2rem;
 	font-family: var(--eventNameFont);
 	font-weight: 100;
+}
+
+.reservation {
+	background-size: max(50%, 350px), contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+	grid-template-rows: repeat(2, 100px);
+}
+
+.reservation-text {
+	font-family: var(--cardTitleFont);
+	font-size: 3rem;
+}
+
+.reservation-btn {
+	background: black;
+	font-size: 1rem;
+	padding: 16px;
+}
+
+.reservation-btn:hover {
+	background-color: orange;
+	color: white;
+}
+
+.footer {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	padding: 1rem;	
+	background-color: var(--headerBg);
+}
+
+.portfolio-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.portfolio-link:hover {
+	color: orange;
 }
 
 @media only screen and (max-width: 600px) {

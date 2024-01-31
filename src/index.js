@@ -3,6 +3,7 @@ import image1 from './img/clark-douglas.jpg';
 import image2 from './img/nerfee-mirandilla.jpg';
 import image3 from './img/lee-myungseong.jpg';
 import image4 from './img/amadeo-valar.jpg';
+import reservationBg from './img/pablo-merchan-montes.jpg';
 import printMe from './data.js';
 
 printMe();
@@ -122,11 +123,11 @@ function content() {
 
 		const title = document.createElement('div');
 		title.classList.add('press-title');
-		title.textContent = p.title;
+		title.textContent = p.title.toUpperCase();
 
 		const eventName = document.createElement('div');
 		eventName.classList.add('event-name');
-		eventName.textContent = p.event_name;
+		eventName.textContent = p.event_name.toUpperCase();
 
 		container.appendChild(title);
 		container.appendChild(eventName);
@@ -134,10 +135,39 @@ function content() {
 	});
 	c.appendChild(featuredPress);
 
+	const reservation = document.createElement('div');
+	reservation.classList.add('reservation');
+	reservation.style.backgroundImage = `url(${reservationBg})`;
+	
+	const reservationText = document.createElement('div');
+	reservationText.classList.add('reservation-text');
+	reservationText.textContent = 'Join us for dinner';
+
+	const reservationBtn = document.createElement('button');
+	reservationBtn.classList.add('reservation-btn');
+	reservationBtn.textContent = 'RESERVATIONS';
+	
+	reservation.appendChild(reservationText);
+	reservation.appendChild(reservationBtn);
+
+	c.appendChild(reservation);
+
 	return c;
 };
 
+function footer() {
+	const f = document.createElement('div');
+	const link = document.createElement('a');
 
+	f.classList.add('footer');
+	link.classList.add('portfolio-link');
+	link.textContent = 'Copyright \u00A9 Neil Taison Rigaud';
+	link.href = 'https://blackbird410.github.io/';
+	link.target = '_blank';
+	f.appendChild(link);
+
+	return f;
+};
 
 
 
@@ -175,3 +205,4 @@ const descText  = 'Delicioso is a compilation of lively dining experiences. Deli
 
 document.body.appendChild(newHeader());
 document.body.appendChild(content());
+document.body.appendChild(footer());
