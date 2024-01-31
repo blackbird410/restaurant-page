@@ -124,7 +124,8 @@ p {
 	font-weight: 100;
 }
 
-button:hover {
+button:hover,
+.press-title:hover {
 	background-color: white;
 	color: black;
 	font-weight: bold;
@@ -205,14 +206,15 @@ img {
 }
 
 .press-title {
-	font-size: 2rem;
+	font-size: 1.8rem;
 	border: 2px solid white;
 	padding: 8px;
 	font-family: var(--pressTitleFont);
+	margin-bottom: 8px;
 }
 
 .event-name {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-family: var(--eventNameFont);
 	font-weight: 100;
 }
