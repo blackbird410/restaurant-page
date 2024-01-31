@@ -146,6 +146,7 @@ img {
 	grid-template-rows: 50px 1fr 50px;
 
 	border: 2px solid white;
+	box-shadow: 5px 5px 10px gray;
 }
 
 .card-description p {
