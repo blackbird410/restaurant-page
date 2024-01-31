@@ -155,7 +155,7 @@ img {
 
 .cards-container .btn-container {
 	display: flex;
-	gap: 16px;
+	gap: 22px;
 	align-items: center;
 }
 
@@ -175,9 +175,12 @@ img {
 }
 
 .card-btn {
-	min-width: 100px;
+	border: none;
+	min-width: 140px;
 	font-size: 1rem;
+	font-weight: 300;
 	background-color: black;
+	font-family: var(--descFont);
 }
 
 @media only screen and (max-width: 600px) {
