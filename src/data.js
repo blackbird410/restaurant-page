@@ -2,7 +2,220 @@ import image1 from './img/clark-douglas.jpg';
 import image2 from './img/nerfee-mirandilla.jpg';
 import image3 from './img/lee-myungseong.jpg';
 import image4 from './img/amadeo-valar.jpg';
+import hl_image1 from './img/tim-toomey.jpg';
 import reservationBg from './img/pablo-merchan-montes.jpg';
+import directionBg from './img/direction.png';
+import hl_image2 from './img/alexandru-bogdan-ghita.jpg';
+
+
+class Press {
+
+	constructor()
+	{
+		this.featuredPressContainer = document.createElement('div');
+		this.featuredPressContainer.classList.add('featured-press-container');
+		this.featuredPressTitle = document.createElement('h1');
+		this.featuredPressTitle.classList.add('featured-press-title');
+		this.featuredPressTitle.textContent = 'Featured Press';
+		this.featuredPressContainer.appendChild(this.featuredPressTitle);
+	}
+
+	addPress(p) {
+		const container = document.createElement('div');
+		container.classList.add('press-container');
+
+		const title = document.createElement('div');
+		title.classList.add('press-title');
+		title.textContent = p.title.toUpperCase();
+
+		const eventName = document.createElement('div');
+		eventName.classList.add('event-name');
+		eventName.textContent = p.event_name.toUpperCase();
+
+		container.appendChild(title);
+		container.appendChild(eventName);
+		this.featuredPressContainer.appendChild(container);
+	};
+
+	get featuredPress() {
+		return this.featuredPressContainer;
+	};
+
+}
+
+class Card {
+	constructor(bgImage, text, btnTitle) {
+		this.cardContainer = document.createElement('div');
+		this.cardContainer.classList.add('card');
+		this.cardContainer.style.backgroundImage = `url(${bgImage})`;
+			
+		this.cardText = document.createElement('div');
+		this.cardText.classList.add('card-text');
+		this.cardText.textContent = text;
+
+		this.cardBtn = document.createElement('button');
+		this.cardBtn.classList.add('card-btn');
+		this.cardBtn.textContent = btnTitle;
+			
+		this.cardContainer.appendChild(this.cardText);
+		this.cardContainer.appendChild(this.cardBtn);
+	}
+
+	get card() {
+		return this.cardContainer;
+	}
+
+}
+
+export function hoursAndLocations() {
+		const content = document.createElement('div');
+		content.id = 'content';
+
+		const picture = document.createElement('img');
+		picture.classList.add('main-picture');
+		picture.src = hl_image1;
+		content.appendChild(picture);
+
+		const main = document.createElement('div');
+		main.classList.add('main-section');
+
+		const informations = document.createElement('div');
+		informations.classList.add('information-container');
+
+		const hoursAndLoc =  document.createElement('div');
+		hoursAndLoc.classList.add('section-title');
+		hoursAndLoc.textContent =  'Hours & Location';
+		informations.appendChild(hoursAndLoc);
+
+		const contentContainer = document.createElement('div');
+		contentContainer.classList.add('content-container');
+
+		const contactInfo = document.createElement('div');
+		contactInfo.classList.add('contact-info');
+		const address = document.createElement('a');
+		address.textContent = contact_info.address;
+		const phone = document.createElement('a');
+		phone.textContent = contact_info.phone;
+		const mail = document.createElement('a');
+		mail.textContent = contact_info.mail;
+		contactInfo.appendChild(address);
+		contactInfo.appendChild(phone);
+		contactInfo.appendChild(mail);
+		contentContainer.appendChild(contactInfo);
+
+		eating_time.forEach(eatingTime => {
+			const container = document.createElement('div');
+			container.classList.add('eating-time-container');
+
+			const titleContainer = document.createElement('div');
+			const title = document.createElement('div');
+			titleContainer.classList.add('title-container');
+			title.classList.add('eating-time-title');
+			title.textContent = eatingTime.title;
+			titleContainer.appendChild(title);
+
+			if (eatingTime.comment)
+			{
+				const comment = document.createElement('div');
+				comment.classList.add('comment');
+				comment.textContent = eatingTime.comment;
+				titleContainer.appendChild(comment);
+			}
+			container.appendChild(titleContainer);
+
+			eatingTime.schedules.forEach(sched => {	
+					const schedule = document.createElement('div');
+					schedule.classList.add('schedule');
+					schedule.textContent = sched;
+					container.appendChild(schedule);
+			});
+			contentContainer.appendChild(container);
+		});
+
+		const orderBtn = document.createElement('button');
+		orderBtn.textContent = 'ORDER ONLINE';
+		contentContainer.appendChild(orderBtn);
+
+		informations.appendChild(contentContainer);
+		main.appendChild(informations);
+		
+		const aboutContainer = document.createElement('div');
+		aboutContainer.classList.add('about-container');
+
+		const aboutTitle = document.createElement('div');
+		aboutTitle.classList.add('section-title', 'about-title');
+		aboutTitle.textContent = 'About';
+		aboutContainer.appendChild(aboutTitle);
+
+		const aboutContent = document.createElement('div');
+		aboutContent.classList.add('about-content');
+		about_content.forEach(parag => {
+			const p = document.createElement('p');
+			p.textContent = parag;
+			aboutContent.appendChild(p);
+		});
+		aboutContainer.appendChild(aboutContent);
+		main.appendChild(aboutContainer);
+		content.appendChild(main);
+
+		const mediaContainer = document.createElement('div');
+		mediaContainer.classList.add('media-container');
+		const mediaTitle = document.createElement('div');
+		mediaTitle.classList.add('media-title');
+		mediaTitle.textContent = 'FOLLOW US ON SOCIAL';
+		mediaContainer.appendChild(mediaTitle);
+
+		const iconContainer = document.createElement('div');
+		iconContainer.classList.add('icon-container');
+		media_icons.forEach(icon => {
+			const i = document.createElement('a');
+			icon.icon_classes.forEach(c =>	i.classList.add(c));
+			i.href = icon.href;
+			iconContainer.appendChild(i);
+		});
+		mediaContainer.appendChild(iconContainer);
+		content.appendChild(mediaContainer);
+		
+		const directionContainer = document.createElement('div');
+		directionContainer.classList.add('direction-container');
+		directionContainer.style.backgroundImage = `url(${directionBg})`;
+		const directionBtn = document.createElement('button');
+		directionBtn.classList.add('direction-btn');
+		directionBtn.id = 'dir-btn';
+		directionBtn.textContent = "GET DIRECTIONS";
+		directionContainer.appendChild(directionBtn);
+		content.appendChild(directionContainer);
+
+		const newPress = new Press();
+		hl_press.forEach(p => newPress.addPress(p));
+		content.appendChild(newPress.featuredPress);
+
+		const galleryCard = new Card(hl_image2, 'Delicioso Atlanta gallery', 'GALLERY');
+		content.appendChild(galleryCard.card);
+
+		return content;		
+}
+
+export function menus() {
+
+}
+
+
+export function about() {
+
+}
+
+export function gallery() {
+
+}
+
+export function events() {
+
+}
+
+export function reservations() {
+
+}
 
 export function newHeader() {
 	
@@ -17,6 +230,7 @@ export function newHeader() {
 		];
 	btns.forEach(btnTitle => {
 		const btn = document.createElement('button');
+		btn.id = btnTitle.toLowerCase();
 		btn.textContent = btnTitle.toUpperCase();
 		btn.classList.add('nav-btn');
 
@@ -106,47 +320,15 @@ export function content() {
 	});
 	c.appendChild(cardsContainer);
 
-	const featuredPress = document.createElement('div');
-	featuredPress.classList.add('featured-press-container');
-	const featuredPressTitle = document.createElement('h1');
-	featuredPressTitle.classList.add('featured-press-title');
-	featuredPressTitle.textContent = 'Featured Press';
-	featuredPress.appendChild(featuredPressTitle);
-
+	
+	const newPress = new Press();
 	press.forEach(p => {
-		const container = document.createElement('div');
-		container.classList.add('press-container');
-
-		const title = document.createElement('div');
-		title.classList.add('press-title');
-		title.textContent = p.title.toUpperCase();
-
-		const eventName = document.createElement('div');
-		eventName.classList.add('event-name');
-		eventName.textContent = p.event_name.toUpperCase();
-
-		container.appendChild(title);
-		container.appendChild(eventName);
-		featuredPress.appendChild(container);
+		newPress.addPress(p);
 	});
-	c.appendChild(featuredPress);
+	c.appendChild(newPress.featuredPress);
 
-	const reservation = document.createElement('div');
-	reservation.classList.add('reservation');
-	reservation.style.backgroundImage = `url(${reservationBg})`;
-	
-	const reservationText = document.createElement('div');
-	reservationText.classList.add('reservation-text');
-	reservationText.textContent = 'Join us for dinner';
-
-	const reservationBtn = document.createElement('button');
-	reservationBtn.classList.add('reservation-btn');
-	reservationBtn.textContent = 'RESERVATIONS';
-	
-	reservation.appendChild(reservationText);
-	reservation.appendChild(reservationBtn);
-
-	c.appendChild(reservation);
+	const reservation = new Card(reservationBg, 'Join Us For dinner', 'RESERVATIONS');
+	c.appendChild(reservation.card);
 
 	return c;
 };
@@ -168,13 +350,25 @@ export function footer() {
 const press = [
 	{
 		title: 'Cary Magazine',
-		event_name: '2023 Maggy Awards Best New Restaurant',
+		event_name: '2023 Maggy Awards: Best New Restaurant',
 	},
 	{
 		title: 'Thrillist',
 		event_name: 'The Best Italian Restaurants in Atlanta',
 	},
 ]
+
+const hl_press = [
+	{
+		title: 'Thrillist',
+		event_name: 'The Best Italian Restaurants in Atlanta',
+	},
+	{
+		title: 'Jezebel',
+		event_name: '100 hottest restaurants',
+	},
+]
+
 
 const cards = [
 	{ 
@@ -194,3 +388,55 @@ const cards = [
 ];
 
 const descText  = 'Delicioso is a compilation of lively dining experiences. Delicioso celebrates the best of Italian American dishes with welcoming hospitality and service. Seasonal changes guide the menu of scratch-made pasta made in-house daily, cheeses, antipastis, pizzas and more. Staying true to the Italian dining traditions, Delicioso also offers a "For the Table" dining option curated for a family-style experience, offered nightly alongside the full a la carte menu.';
+
+const contact_info = {
+	address: "900 3rd St, Alpharotta, GA 30009",
+	phone: "(678) 722-5455",
+	mail:"Delicioso@theindigoroad.com",
+};
+
+const eating_time = [
+	{
+		title: "Brunch",
+		comment: '',
+		schedules: ['Saturday + Sunday: 11 a.m. - 2:30 p.m.',]
+	},
+	{
+		title: "Dinner",
+		comment: '',
+		schedules: [
+			"Sunday: 5-9 p.m.",
+			"Monday - Thursday: 5 - 10 p.m.",
+			"Friday + Saturday: 5 - 11 p.m.",
+		]
+	},
+	{
+		title: "Happy Hour",
+		comment: 'available at the bar',
+		schedules: ['Monday - Friday: 5 - 7 p.m.',]
+	},
+];
+
+const about_content = [
+	"Located within Alpharotta's Avalon, Delicioso, which means more than delicious, is just that - a compilation of lively dining experiences, top-notch service and quality American Italian cuisine that sets the stage for genuine connection over a great meal.",
+	`Delicioso's cuisine puts a twist on treasured classics and introducing modern culinary techniques with the changing of the seasons. House-made pastas, cheeses and other hand-crafted ingredients abound in the from-scratch kitchen, and guests will taste the culinary team's attention to detail in every bite. Staying true to Italian dining traditions, Delicioso also offers a "For the table" dining option that allows for a fun, family-style experience, offered nightly alongside the full a la carte menu.`,
+];
+
+const media_icons = [
+	{
+		icon: 'facebook',
+		icon_classes: ['fa', 'fa-facebook',],
+		href: '#',
+	},
+	{
+		icon: 'twitter',
+		icon_classes: ['fa', 'fa-twitter',],
+		href: '#',
+	},
+	{
+		icon: 'instagram',
+		icon_classes: ['fa', 'fa-instagram',],
+		href: '#',
+	}
+
+];
