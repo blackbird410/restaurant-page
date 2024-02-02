@@ -2,10 +2,10 @@ import './style.css';
 import { printMe, newHeader, content, footer, hoursAndLocations, menus, about, gallery, events, reservations } from './data.js';
 
 document.body.appendChild(newHeader());
-//displayContent();
-document.body.appendChild(gallery());
-document.body.appendChild(footer());
-addEvents();
+displayContent();
+//document.body.appendChild(gallery());
+//document.body.appendChild(footer());
+//addEvents();
 
 function addEvents()
 {

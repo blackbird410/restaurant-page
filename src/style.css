@@ -539,12 +539,14 @@ img {
 	flex-basis: 300px;
 	grid-template-rows: 1fr 40px;
 	text-align: center;
+	justify-items: center;
 }
 
 .employee-image {
 	height: 100%;
 	width: auto;
 	max-width: 100%;
+	max-height: 300px;
 }
 
 .employee-name {
@@ -555,6 +557,7 @@ img {
 	align-self: stretch;
 	display: grid;
 	align-items: center;
+	padding: 12px;
 }
 
 
