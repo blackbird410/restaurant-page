@@ -2,11 +2,14 @@ import image1 from './img/clark-douglas.jpg';
 import image2 from './img/nerfee-mirandilla.jpg';
 import image3 from './img/lee-myungseong.jpg';
 import image4 from './img/amadeo-valar.jpg';
+import image5 from './img/jonas-albert.jpg';
+import image6 from './img/mgg-vitchakorn.jpg';
 import hl_image1 from './img/tim-toomey.jpg';
 import reservationBg from './img/pablo-merchan-montes.jpg';
 import directionBg from './img/direction.png';
 import hl_image2 from './img/alexandru-bogdan-ghita.jpg';
 import menu_image1 from './img/davey-gravy.jpg';
+import about_image1 from './img/albert.jpg';
 
 class Press {
 
@@ -122,7 +125,78 @@ class Menu {
 
 }
 
+class Description {
+	constructor(textContent) {
+		
+		this.descriptionContainer = document.createElement('div');
+		this.descriptionContainer.classList.add('description-container');
+		this.description = document.createElement('p');
+		this.description.textContent = textContent;
+		this.descriptionContainer.appendChild(this.description);
+	}
 
+	get text() {
+		return this.descriptionContainer;
+	}
+}
+
+export function about() {
+	const content = document.createElement('div');
+	content.id = 'content';
+
+	const picture = document.createElement('div');
+	picture.classList.add('card', 'main-card');
+	picture.style.backgroundImage = `url(${about_image1})`;
+	content.appendChild(picture);
+
+	const title = document.createElement('div');
+	title.classList.add('section-title');
+	title.textContent = 'About';
+	picture.appendChild(title);
+
+	const desc = new Description(descText);
+	desc.text.classList.add('about-description');
+	content.appendChild(desc.text);
+
+	const cardsContainer = document.createElement('div');
+	cardsContainer.classList.add('cards-container', 'about-cards');
+	let shuffle = true;
+	aboutCards.forEach(card => {
+		const cardContainer = document.createElement('div');
+		const i = document.createElement('img');
+		const descContainer = document.createElement('div');
+		const title = document.createElement('h2');
+		const text = document.createElement('p');
+
+		cardContainer.classList.add('card-container');
+		i.classList = 'card-image';
+		descContainer.classList.add('card-description');
+		title.classList.add('card-title');
+
+		i.src = card.image;
+		title.textContent = card.title;
+		text.textContent = card.description;
+		
+		descContainer.appendChild(title);
+		descContainer.appendChild(text);
+
+		if (shuffle)
+		{
+			cardContainer.appendChild(i);
+			cardContainer.appendChild(descContainer);
+			cardsContainer.appendChild(cardContainer);
+		} 
+		else {
+			cardContainer.appendChild(descContainer);
+			cardsContainer.appendChild(cardContainer);
+			cardContainer.appendChild(i);
+		}
+		shuffle = (shuffle) ? false : true;
+	});
+	content.appendChild(cardsContainer);
+	
+	return content;
+}
 
 export function menus() {
 	const content = document.createElement('div');
@@ -301,10 +375,6 @@ export function hoursAndLocations() {
 
 
 
-export function about() {
-
-}
-
 export function gallery() {
 
 }
@@ -359,19 +429,14 @@ export function content() {
 	});
 	c.appendChild(pictureContainer);
 
-	const descriptionContainer = document.createElement('div');
-	descriptionContainer.classList.add('description-container');
-	const description = document.createElement('p');
-	description.textContent = descText;
-	descriptionContainer.appendChild(description);
-
+	const desc = new Description(descText);
 	const learnMore = document.createElement('button');
 	learnMore.id = 'learn-more-btn';
 	learnMore.textContent = 'LEARN MORE';
 
-	descriptionContainer.appendChild(learnMore);
+	desc.text.appendChild(learnMore);
 
-	c.appendChild(descriptionContainer);
+	c.appendChild(desc.text);
 
 	const cardsContainer = document.createElement('div');
 	cardsContainer.classList.add('cards-container')
@@ -485,6 +550,19 @@ const cards = [
 	},
 
 
+];
+
+const aboutCards = [
+	{ 
+		image: image6, 
+		title: 'Delicioso Carry', 
+		description: "Seasonal changes, outstanding ingredients and a made-from-scratch philosophy guide Delicioso's menu of house-made focaccia and pasta, antispasti, made-to-order wood-fired pizzas, and piatti. The chef curated dinner and desert menus, pair with the well balanced wine and beverage program. Located at Fenton in Cary, NC, this casual yet polished family-style Italian restaurant features 120 indoor dining seats, 60 seats outdoors on the semi-covered patio, and a 12-seat bar.", 
+	},
+	{ 
+		image: image5, 
+		title: 'Delicioso Atlanta', 
+		description: "Located at Avalon in Alpharotta, GA, Delicioso Atlanta's restaurant's open-concept dining room is anchored around the kitchen's wood-burning oven, reminiscent of the hearth in a family home. Accented by reclaimed barn wood and refined ceramic tile, the modern space envelops guests in a welcoming atmosphere-whether they're visiting the bar for a hand-crafted cocktail or a glass of wine, grabbing a pizza with the kids or sitting down for a family-style dinner with friends and colleagues.", 
+	},
 ];
 
 const descText  = 'Delicioso is a compilation of lively dining experiences. Delicioso celebrates the best of Italian American dishes with welcoming hospitality and service. Seasonal changes guide the menu of scratch-made pasta made in-house daily, cheeses, antipastis, pizzas and more. Staying true to the Italian dining traditions, Delicioso also offers a "For the Table" dining option curated for a family-style experience, offered nightly alongside the full a la carte menu.';

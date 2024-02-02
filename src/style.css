@@ -141,15 +141,14 @@ button:hover,
 }
 
 img {
-	height: var(--imgSize);
-	width: auto;
-	max-width: 100%;
+	max-width: 400px;
 }
 
 .cards-container {
 	grid-template-rows: repeat(auto-fit, min(var(--imgSize), 1fr));
 	gap: 16px;
 	padding: 0 1.5rem;
+	max-width: 800px;
 }
 
 .card-container {
@@ -210,9 +209,10 @@ img {
 	row-gap: 36px;
 	text-align: center;
 	width: 100%;
+	max-width: 800px;
 	justify-content: center;
 
-	grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .featured-press-title {
@@ -461,7 +461,6 @@ img {
 
 .meal-header {
 	border-bottom: 2px solid white;
-	display:
 }
 
 .meal-comment {
@@ -496,9 +495,41 @@ img {
 	font-weight: bold;
 }
 
+.main-card {
+	width: 80%;
+	min-height: 500px;
+}
+
+.main-card {
+	align-content: end;
+	
+}
+
+.main-card .section-title {
+	grid-row: 1 / -1;
+	justify-self: left;
+	align-self: end;
+	text-align: center;
+	background-color: var(--contentBg);
+	padding: 1rem 0;
+	width: 80%;
+}
+
+.about-description {
+	background-color: inherit;
+}
+
+.about-description p {
+	font-size: 1.7rem;
+}
+
 @media only screen and (max-width: 600px) {
 	nav {
 		grid-column: 2 / -1;
 		justify-content: center;
+	}
+
+	img {
+		max-width: 350px;
 	}
 }
