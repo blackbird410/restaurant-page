@@ -163,6 +163,44 @@ class Employee {
 	}
 }
 
+class Gallery {
+	constructor() {
+		this.container = document.createElement('div');
+		this.container.classList.add('gallery-container');
+	}
+
+	get gallery() {
+		return this.container;
+	}
+
+	addPhoto(photo) {
+		const p = document.createElement('img');
+		p.classList.add('gallery-photo');
+		p.src = photo;
+		this.container.appendChild(p);
+	}
+}
+
+
+export function gallery() {	
+	const content = document.createElement('div');
+	content.id = 'content';
+		
+	const title = document.createElement('div');
+	title.classList.add('section-title');
+	title.textContent = 'Delicioso Gallery';
+
+	content.appendChild(title);
+
+	const newGallery = new Gallery();
+	gallery_photos.forEach(photo => newGallery.addPhoto(photo));
+	content.appendChild(newGallery.gallery);
+
+	return content;
+}
+
+
+
 export function about() {
 	const content = document.createElement('div');
 	content.id = 'content';
@@ -411,10 +449,6 @@ export function hoursAndLocations() {
 }
 
 
-
-export function gallery() {
-
-}
 
 export function events() {
 
@@ -981,3 +1015,15 @@ const team_members = [
 	},
 ];
 
+const gallery_photos = [
+	about_image1,
+	image3,
+	hl_image2,
+	reservationBg,
+	image1,
+	image2,
+	image4,
+	hl_image1,
+	image5,
+	image6,
+]

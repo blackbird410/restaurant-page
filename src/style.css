@@ -159,7 +159,8 @@ img {
 
 
 .card-description,
-.press-title {
+.press-title,
+.gallery-photo {
 	box-shadow: 5px 5px 10px gray;
 }
 
@@ -554,6 +555,19 @@ img {
 	align-self: stretch;
 	display: grid;
 	align-items: center;
+}
+
+
+.gallery-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+	max-width: 80%;
+}
+
+.gallery-photo {
 }
 
 @media only screen and (max-width: 600px) {
