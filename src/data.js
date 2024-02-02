@@ -140,6 +140,29 @@ class Description {
 	}
 }
 
+class Employee {
+	constructor(name, img, job) {
+		this.container = document.createElement('div');
+		this.container.classList.add('employee-container')
+		
+		this.imgContainer = document.createElement('img');
+		this.imgContainer.classList.add('employee-image');
+		this.imgContainer.src = img;
+
+		this.name = document.createElement('div');
+		this.name.classList.add('employee-name');
+		this.name.textContent = name;
+
+		this.container.appendChild(this.imgContainer);
+		this.container.appendChild(this.name);
+
+		this.job = document.createElement('div');
+		this.job.textContent = job;
+		this.job.classList.add('employee-job');
+		this.container.appendChild(this.job);
+	}
+}
+
 export function about() {
 	const content = document.createElement('div');
 	content.id = 'content';
@@ -194,6 +217,20 @@ export function about() {
 		shuffle = (shuffle) ? false : true;
 	});
 	content.appendChild(cardsContainer);
+	
+	const team = document.createElement('div');
+	team.classList.add('team-container');
+
+	const teamTitle = document.createElement('div');
+	teamTitle.textContent = "Team";
+	teamTitle.classList.add('section-title');
+	content.appendChild(teamTitle);
+
+	team_members.forEach(member => {
+		const m = new Employee(member.name, member.img, member.job);
+		team.appendChild(m.container);
+	});
+	content.appendChild(team);
 	
 	return content;
 }
@@ -910,3 +947,37 @@ const menu_items = [
 		],
 	},
 ]
+
+const team_members = [
+	{
+		name: 'Peter Sanders',
+		img: image1,
+		job: 'Culinary Director',
+	},
+	{
+		name: 'Alexi Ivanof',
+		img: image2,
+		job: 'General Manager',
+	},
+	{
+		name: 'Vinsmoke Sanji',
+		img: image3,
+		job: 'Chef de Cuisine',
+	},
+	{
+		name: 'Gojo Satorou',
+		img: image4,
+		job: 'Pastry, Cary',
+	},
+	{
+		name: 'Kilua Zoldyck',
+		img: image5,
+		job: 'Atlanta Area Director',
+	},
+	{
+		name: 'Monkey D. Luffy',
+		img: image6,
+		job: 'Founder',
+	},
+];
+
