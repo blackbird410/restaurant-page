@@ -141,7 +141,7 @@ button:hover,
 }
 
 img {
-	max-width: 400px;
+	max-width: 350px;
 }
 
 .cards-container {
@@ -425,7 +425,7 @@ img {
 	flex-direction: column;
 	justify-items: center;
 	align-items: center;
-	gap: 4rem;
+	gap: 1rem;
 }
 
 .options-container {
@@ -440,8 +440,8 @@ img {
 	flex-wrap: wrap;
 	justify-content: center;
 	justify-items: center;
-	padding: 3rem;
-	gap: 3rem;
+	padding: 1rem;
+	gap: 1rem;
 }
 
 .meal-container {
@@ -473,7 +473,7 @@ img {
 .items-container {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 1rem;
 	padding: 16px;
 }
 
