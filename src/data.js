@@ -6,7 +6,7 @@ import hl_image1 from './img/tim-toomey.jpg';
 import reservationBg from './img/pablo-merchan-montes.jpg';
 import directionBg from './img/direction.png';
 import hl_image2 from './img/alexandru-bogdan-ghita.jpg';
-
+import menu_image1 from './img/davey-gravy.jpg';
 
 class Press {
 
@@ -65,6 +65,109 @@ class Card {
 		return this.cardContainer;
 	}
 
+}
+
+class Menu {
+	
+	constructor(meal, comment, content) {
+		this.mealContainer = document.createElement('div');
+		this.mealContainer.classList.add('meal-container');
+
+		this.mealHeader = document.createElement('div');
+		this.mealHeader.classList.add('meal-header');
+
+		this.mealName = document.createElement('div');
+		this.mealName.classList.add('meal-name', 'section-title');
+		this.mealName.textContent = meal;
+		this.mealHeader.appendChild(this.mealName);
+
+		this.mealComment = document.createElement('div');
+		this.mealComment.classList.add('meal-comment');
+		this.mealComment.textContent = comment;
+		this.mealHeader.appendChild(this.mealComment);
+
+		this.mealContainer.appendChild(this.mealHeader);
+		
+		this.container = document.createElement('div');
+		this.container.classList.add('items-container');
+		content.forEach(food => {
+			const c = document.createElement('div');
+			c.classList.add('item-container');
+
+			const title = document.createElement('em');
+			title.classList.add('item-title');
+			title.textContent = food.title.toUpperCase();
+			c.appendChild(title);
+
+			let content = '';
+			food.contents.forEach(elt => {
+				content += elt + ', ';
+			});
+			c.innerHTML += content.slice(0, -2);
+
+			const number = document.createElement('em');
+			number.classList.add('item-number');
+			number.textContent = food.number;
+			c.appendChild(number);
+
+			this.container.appendChild(c);
+		});
+		this.mealContainer.appendChild(this.container);
+	}
+
+	get meal() {
+		return this.mealContainer;
+	}
+
+
+}
+
+
+
+export function menus() {
+	const content = document.createElement('div');
+	content.id = 'content';
+
+	const picture = document.createElement('img');
+	picture.classList.add('main-picture');
+	picture.src = menu_image1;
+	content.appendChild(picture);
+
+	const menuOptions = document.createElement('div');
+	menuOptions.classList.add('menu-options');
+	const menuTitle = document.createElement('div');
+	menuTitle.classList.add('section-title');
+	menuTitle.textContent = 'Atlanta';
+	menuOptions.appendChild(menuTitle);
+
+	const options = ['DINNER', 'BRUNCH', 'HAPPY HOUR', 'WINE & COCKTAILS', 'DESERT'];
+	const optionsContainer = document.createElement('div');
+	optionsContainer.classList.add('options-container');
+	options.forEach(option => {
+		const btn = document.createElement('button');
+		btn.classList.add('menu-btn');
+		btn.textContent = option;
+		optionsContainer.appendChild(btn);
+	});
+
+	menuOptions.appendChild(optionsContainer);
+
+	const pdfDownloadBtn = document.createElement('button');
+	pdfDownloadBtn.classList.add('pdf-download-btn');
+	pdfDownloadBtn.textContent = 'DOWNLOAD PDF';
+
+	menuOptions.appendChild(pdfDownloadBtn);
+	content.appendChild(menuOptions);
+
+	const menuContainer = document.createElement('div');
+	menuContainer.classList.add('menu-container');
+	menu_items.forEach(item => {
+		const menu = new Menu(item.meal, item.comment, item.content);
+		menuContainer.appendChild(menu.meal);
+	});
+	content.appendChild(menuContainer);
+
+	return content;
 }
 
 export function hoursAndLocations() {
@@ -196,9 +299,6 @@ export function hoursAndLocations() {
 		return content;		
 }
 
-export function menus() {
-
-}
 
 
 export function about() {
@@ -440,3 +540,295 @@ const media_icons = [
 	}
 
 ];
+
+const menu_items = [
+	{
+		meal: 'Antipasti',
+		comment: 'Before the meal',
+		content: [
+			{
+				title: 'Caesar salad',
+				contents: [
+					'hearts of romaine',
+					'focaccia crouton',
+					'parmesan dressing',
+				],
+				number: 14,
+			},
+			{
+				title: 'Colletta chopped salad',
+				contents: [
+					'Kale',
+					'iceberg',
+					'ceci beans',
+					'cherry tomatoes',
+					'roasted olives',
+					'Toscano salami ricotta salata',
+					'pepperoncino',
+					'olive-brine vinaigrette',
+				],
+				number: 16,
+			},
+			{
+				title: 'Fire roasted octopus',
+				contents: [
+					'spicy tomato puree',
+					'crispy capers',
+					'smoked olives',
+					'herbs',
+				],
+				number: 19,
+			},
+			{
+				title: 'Burrata',
+				contents: [
+					'wood-roasted delicata squash',
+					'Bose pears',
+					'Calabrian hot honey',
+				],
+				number: 18,
+			},
+			{
+				title: 'Shrimp scampi',
+				contents: [
+					'lemon',
+					'parsley',
+					'garlic',
+					'butter',
+					'toasted flat bread',
+				],
+				number: 18,
+			},
+			{
+				title: 'Meatballs',
+				contents: [
+					'CAB',
+					'pork and veal',
+					'san marzano tomato',
+					'polenta',
+					'parmesan',
+					'basil',
+				],
+				number: 15,
+			},
+			{
+				title: 'Prosciutto di parma',
+				contents: [
+					'parmesan',
+					'honeycomb',
+					'seasonal fruit',
+					'fried flatbread',
+				],
+				number: 25,
+			},
+		],
+	},
+
+	// --------------------------------------------------------
+	{
+		meal: 'Pizza',
+		comment: 'From the brick oven',
+		content: [
+			{
+				title: 'Margherita',
+				contents: [
+					'san marzano tomato',
+					'mozzarella',
+					'basil',
+				],
+				number: 17,
+			},
+			{
+				title: 'Pistachio pesto',
+				contents: [
+					'Smoked Mozzarella',
+					'pickled red onion',
+					'Roman artichoke',
+					'pistachio pesto',
+					'parmesan',
+				],
+				number: 21,
+			},
+			{
+				title: 'Nduja',
+				contents: [
+					'Spicy sausage',
+					'fire roasted red pepper',
+					'peperoncino',
+					'fontina',
+				],
+				number: 18,
+			},
+			{
+				title: 'Calabrese',
+				contents: [
+					'calabrese salami',
+					'calabrian chili',
+					'olive',
+					'mozzarella',
+					'honey',
+				],
+				number: 18,
+			},
+			{
+				title: 'Fungi',
+				contents: [
+					'roasted mushrooms',
+					'truffle cream',
+					'aged fontina',
+					'herbs',
+				],
+				number: 19,
+			},
+		],
+	},
+	
+	//----------------------------------------------
+	{
+		meal: 'Pasta',
+		comment: 'Made fresh daily',
+		content: [
+			{
+				title: 'Rigatoni',
+				contents: [
+					'CAB bolognese',
+					'tomato',
+					'parmesan',
+					'basil',
+				],
+				number: 28,
+			},
+			{
+				title: 'Black pepper taglia telle',
+				contents: [
+					'pork tesa',
+					'egg yolk',
+					'brodo',
+					'chives',
+				],
+				number: 27,
+			},
+			{
+				title: 'Spaghetti',
+				contents: [
+					'san marzano tomato',
+					'shaved garlic',
+					'basil',
+					'olive oil',
+				],
+				number: 26,
+			},
+			{
+				title: 'Malfaldine',
+				contents: [
+					'Fra Diavolo',
+					'shrimp',
+					'mussels',
+					'lemon',
+					'parsley',
+				],
+				number: 28,
+			},
+			{
+				title: 'Lasagna',
+				contents: [
+					'CAB bolognese',
+					'tomato',
+					'parmesan',
+					'mozzarella',
+					'whipped ricotta',
+				],
+				number: 28,
+			},
+			{
+				title: 'Ravioli',
+				contents: [
+					'herb ricotta',
+					'house italian',
+					'sausage',
+					'vodka sauce',
+				],
+				number: 28,
+			},
+			{
+				title: 'Balanzoni',
+				contents: [
+					'roasted eggplant',
+					'saffron',
+					'San Marzano dried tomatoes',
+					'fennel pollen',
+					'ricotta salata',
+				],
+				number: 27,
+			},
+			{
+				title: '',
+				contents: [
+					'gluten-free pasta available',
+				],
+				number: '',
+			},
+		],
+	},
+	
+	// ----------------------------------------------------
+	{
+		meal: 'Piatti',
+		comment: 'Composed entrees',
+		content: [
+			{
+				title: 'CAB flat iron',
+				contents: [
+					'cavalo nero',
+					'crispy potatoes',
+					'salsa verde',
+					'crispy shallots',
+				],
+				number: 34,
+			},
+			{
+				title: 'Chicken "Cacciatore"',
+				contents: [
+					'grilled half chicken',
+					'onion',
+					'trumpet mushrooms',
+					'fire roasted bell peppers',
+					'olives',
+					'tomato gravy',
+				],
+				number: 36,
+			},
+			{
+				title: 'Bone-in pork chop',
+				contents: [
+					'apple cider brine',
+					'parsnip',
+					'roasted brussels sprouts',
+					'mostarda',
+				],
+				number: 36,
+			},
+			{
+				title: 'Chicken parmesan',
+				contents: [
+					'crispy Joyce Farms breast',
+					'spaghetti',
+					'vodka sauce',
+					'mozzarella',
+					'basil',
+				],
+				number: 28,
+			},
+			{
+				title: 'Grilled steelhead trout "A la puntanesca"',
+				contents: [
+					'confit cherry tomatoes',
+					'olives',
+					'capers',
+					'saffron potato puree',
+				],
+				number: 36,
+			},
+		],
+	},
+]

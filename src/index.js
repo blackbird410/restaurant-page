@@ -3,7 +3,7 @@ import { printMe, newHeader, content, footer, hoursAndLocations, menus, about, g
 
 document.body.appendChild(newHeader());
 displayContent();
-//document.body.appendChild(hoursAndLocations());
+//document.body.appendChild(menus());
 //document.body.appendChild(footer());
 //addEvents();
 
