@@ -110,6 +110,7 @@ nav button:last-of-type:hover {
 	justify-content: center;
 }
 
+.event-options-container,
 .picture-container {
 	width: 80%;
 	display: flex;
@@ -120,7 +121,7 @@ nav button:last-of-type:hover {
 }
 
 .description-container {
-	width: 100%;
+	width: 100vw;
 	background: black;
 	text-align: center;
 
@@ -587,15 +588,6 @@ img {
 
 .event-guide-btn {
 	border: 2px solid white;
-}
-
-.event-options-container {
-	width: 80%;
-	display: grid;
-	grid-template-rows: auto;
-	grid-template-columns: repeat(auto-fit, minmax(var(--imgSize), 1fr));
-	gap: 1rem;
-	place-items: center;
 }
 
 .event-container {
