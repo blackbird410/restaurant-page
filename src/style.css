@@ -78,7 +78,16 @@ button {
 
 nav button {
 	background: inherit;
+}
 
+nav button:last-of-type {
+	background-color: white;
+	color: black;
+}
+
+nav button:last-of-type:hover {
+	background-color: brown;
+	color: white;
 }
 
 #content {
@@ -88,7 +97,7 @@ nav button {
 	justify-content: center;
 	padding: min(150px, 40%) 0 50px 0;
 	align-items: center;
-	gap: 1.5rem;
+	gap: 1rem;
 }
 
 .description-container,
@@ -101,19 +110,20 @@ nav button {
 }
 
 .picture-container {
+	width: 80%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding: 8px;
 	gap: 12px;
-	min-width: 90%;
 }
 
 .description-container {
+	width: 100%;
 	background: black;
 	text-align: center;
 
-	grid-template-columns: minmax(300px, 70%);
+	grid-template-columns: minmax(var(--imgSize), 70%);
 	padding: 48px 16px;
 }
 
@@ -141,20 +151,21 @@ button:hover,
 }
 
 img {
-	max-width: 350px;
+	max-width: 400px;
 }
 
 .cards-container {
+	width: 80%;
 	grid-template-rows: repeat(auto-fit, min(var(--imgSize), 1fr));
-	gap: 2rem;
+	grid-template-columns: repeat(auto-fit, min(var(--imgSize), 1fr));
+	gap: 1rem;
 	padding: 0 1.5rem;
-	max-width: 800px;
 }
 
 .card-container {
 	grid-template-columns: repeat(auto-fit, minmax(var(--imgSize), 1fr));
 	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 }
 
 
@@ -165,11 +176,13 @@ img {
 }
 
 .card-description {
+	width: 80%;
 	display: grid;
 	grid-template-rows: 70px 1fr 50px;
 
 	border: 2px solid white;
 	padding: 16px;
+	gap: 1rem;
 }
 
 .card-description p {
@@ -177,12 +190,13 @@ img {
 }
 
 .cards-container .btn-container {
-	display: flex;
-	gap: 22px;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+	gap: 1rem;
 	align-items: center;
 }
 
-.btn-container,
 .card-title,
 .card-description {
 
@@ -205,12 +219,10 @@ img {
 	font-family: var(--descFont);
 }
 
-.featured-press-container {
-	
+.featured-press-container {	
 	row-gap: 36px;
 	text-align: center;
-	width: 100%;
-	max-width: 800px;
+	width: 80%;
 	justify-content: center;
 
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -303,7 +315,6 @@ img {
 }
 
 .main-picture {
-	max-width: 500px;
 	width: 80%;
 	height: auto;
 	flex-grow: 1;
@@ -421,6 +432,7 @@ img {
 }
 
 .menu-options {
+	width: 80%;
 	display: flex;
 	flex-direction: column;
 	justify-items: center;
@@ -436,6 +448,7 @@ img {
 }
 
 .menu-container {
+	width: 80%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -525,6 +538,7 @@ img {
 }
 
 .team-container {
+	width: 80%;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 24px;
@@ -554,7 +568,7 @@ img {
 	color: black;
 	font-size: 1.2rem;
 	font-weight: bold;
-	align-self: stretch;
+	place-self: stretch;
 	display: grid;
 	align-items: center;
 	padding: 12px;
@@ -570,8 +584,70 @@ img {
 	max-width: 80%;
 }
 
-.gallery-photo {
+.event-guide-btn {
+	border: 2px solid white;
 }
+
+.event-options-container {
+	width: 80%;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(auto-fit, minmax(var(--imgSize), 1fr));
+	gap: 1rem;
+	place-items: center;
+}
+
+.event-container {
+	display: grid;
+	grid-template-rows: 4fr 1fr;
+	justify-items: center;
+	background: white;
+	color: black;
+	font-weight: bold;
+}
+
+.event-container:hover {
+	opacity: 0.7;
+}
+
+.event-name {
+	display: grid;
+	align-items: center;
+}
+
+form {
+	width: max(50%, 400px);
+	display: grid;
+	grid-template-rows: repeat(50px, 4);
+	grid-template-columns: auto;
+	gap: 1rem;
+}
+
+form .section-title {
+	text-align: center;
+}
+
+form label,
+form button {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+form label span {
+	font-weight: normal;
+	font-style: italic;
+}
+
+form button {
+	width: 100%;
+}
+
+.input-container {
+	display: grid;
+	grid-template-rows: 2fr 3fr; 
+	gap: 5px;
+}
+
 
 @media only screen and (max-width: 600px) {
 	nav {

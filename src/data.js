@@ -10,6 +10,7 @@ import directionBg from './img/direction.png';
 import hl_image2 from './img/alexandru-bogdan-ghita.jpg';
 import menu_image1 from './img/davey-gravy.jpg';
 import about_image1 from './img/albert.jpg';
+import event_image from './img/the-storyteller.jpg';
 
 class Press {
 
@@ -181,6 +182,186 @@ class Gallery {
 	}
 }
 
+class ReservationForm {
+	constructor() {
+		this.form = document.createElement('form');
+		this.form.id = 'businessForm';
+
+		this.title = document.createElement('div');
+		this.title.classList.add('section-title');
+		this.title.textContent = 'Reservations';
+		this.form.appendChild(this.title);
+
+		this.fields = ['Location', "Number of People", 'Date', 'Time'];
+		this.fields.forEach(field => {
+			const container = document.createElement('div');
+			container.classList.add('input-container');
+
+			let id = field.toLowerCase().split(' ').join('-');
+			const label = document.createElement('label');
+			label.setAttribute('for', id);
+			label.textContent = field;
+
+			if (field == 'Location' || field == 'Date')
+			{
+				const span = document.createElement('span');
+				span.textContent = ' - Required';
+				label.appendChild(span);
+			}
+			container.appendChild(label);
+
+			if (field == 'Date') {
+				const input = document.createElement('input');
+				input.id = id;
+				input.name = id;
+				input.type = 'date';
+				container.appendChild(input);
+				this.form.appendChild(container);
+			}
+			else {
+				const input = document.createElement('select');
+				input.id = id;
+				input.name = id;
+				input.placeholder = field;
+				let values;
+
+				switch(field)
+				{
+					case "Location":
+						values = form_options.locations;
+						break;
+					case "Time":
+						values = form_options.get_hour_frames();
+						break;
+					default:
+						values = form_options.get_people();
+						break;
+				}
+
+				values.forEach(v => {
+						const o = document.createElement('option');
+						o.value = v;
+						o.textContent = v;
+						input.appendChild(o);
+				});
+				container.appendChild(input);
+				this.form.appendChild(container);
+			}
+		});
+
+		this.btn = document.createElement('button');
+		this.btn.textContent = 'Find a table';
+		this.form.appendChild(this.btn);
+	}
+
+	get content() {
+		return this.form;
+	}
+}
+
+const form_options = {
+	 locations: ['Atlanta', 'Cary',],
+	 max_number_of_people: 8,
+	 open_hours: '7:00 AM - 11:00 PM',
+	 get_people() {
+	 	let peoples = ['1 Person',];
+		for (let p = 2; p <= this.max_number_of_people; p++)
+			peoples.push(`${p} People`);
+		return peoples;
+	 },
+	 get_hour_frames() {
+	     let hours = [];
+		 let start = this.open_hours.split('-')[0].trim().split(' ');
+		 let end = this.open_hours.split('-')[1].trim().split(' ');
+		
+		start = (start[1] == 'AM') ? Number(start[0].split(':').join('')) : Number(start[0].split(':').join('')) + 1200;
+		end = (end[1] == 'AM') ? Number(end[0].split(':').join('')) : Number(end[0].split(':').join('')) + 1200;
+
+		let span = 30;
+		let h = 0;
+		let m = 0;
+		let p;
+		while (start <= end)
+		{
+			h = (Math.floor(start / 100) == 12) ? 12 : Math.floor(start / 100) % 12;
+			m = (start % 100) ? start % 100 : '00';
+			p = (Math.floor(start / 100) < 12) ? 'AM' : 'PM'; 
+			hours.push(`${h}:${m} ${p}`);
+			start += span;
+			span = (span == 30) ? 70 : 30;
+		};
+
+		return hours;
+	 },
+};
+
+export function reservations() {
+	
+	const content = document.createElement('div');
+	content.id = 'content';
+
+	const newForm = new ReservationForm();
+	content.appendChild(newForm.content);
+
+	return content;
+}
+
+export function events() {
+	
+	const content = document.createElement('div');
+	content.id = 'content';
+
+	const picture = document.createElement('div');
+	picture.classList.add('card', 'main-card');
+	picture.style.backgroundImage = `url(${event_image})`;
+	content.appendChild(picture);
+
+	const title = document.createElement('div');
+	title.classList.add('section-title');
+	title.textContent = 'Private Dining & Events';
+	picture.appendChild(title);
+
+	const desc = document.createElement('div');
+	desc.classList.add('description-container');
+
+	const descTitle = document.createElement('div');
+	descTitle.classList.add('section-title', 'event-title');
+	descTitle.textContent = 'Book and event';
+	desc.appendChild(descTitle);
+
+	const text = document.createElement('p');
+	text.classList.add('description-text');
+	text.textContent = "For all inquiries, please fill out the form below and we'll be in touch soon.";
+	desc.appendChild(text);
+
+	const btn = document.createElement('button');
+	btn.classList.add('card-btn', 'event-guide-btn');
+	btn.textContent = "DOWNLOAD PRIVATE DINING GUIDE";
+	desc.appendChild(btn);	
+	content.appendChild(desc);
+
+	const eventOptions = document.createElement('div');
+	eventOptions.classList.add('event-options-container');
+
+	options.forEach(option => {
+		const optionContainer = document.createElement('div');
+		optionContainer.classList.add('event-container');
+
+		const i = document.createElement('img');
+		i.classList.add('event-image');
+		i.src = option.img;
+		optionContainer.appendChild(i);
+
+		const eventName = document.createElement('div');
+		eventName.classList.add('event-name');
+		eventName.textContent = option.name.toUpperCase();
+		optionContainer.appendChild(eventName);
+		eventOptions.appendChild(optionContainer);
+	});
+	content.appendChild(eventOptions);
+
+	return content;
+}
 
 export function gallery() {	
 	const content = document.createElement('div');
@@ -450,13 +631,7 @@ export function hoursAndLocations() {
 
 
 
-export function events() {
 
-}
-
-export function reservations() {
-
-}
 
 export function newHeader() {
 	
@@ -1027,3 +1202,14 @@ const gallery_photos = [
 	image5,
 	image6,
 ]
+
+const options = [
+{
+	name: 'Atlanta Private Dining Room',
+	img: image4, 
+},
+{
+	name:'Patio Events',
+	img: about_image1,
+},
+];

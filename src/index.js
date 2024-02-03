@@ -3,9 +3,6 @@ import { printMe, newHeader, content, footer, hoursAndLocations, menus, about, g
 
 document.body.appendChild(newHeader());
 displayContent();
-//document.body.appendChild(gallery());
-//document.body.appendChild(footer());
-//addEvents();
 
 function addEvents()
 {
