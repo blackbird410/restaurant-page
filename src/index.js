@@ -1,4 +1,4 @@
-import './style.css';
+import "./style.css";
 import {
   printMe,
   newHeader,
@@ -10,48 +10,48 @@ import {
   gallery,
   events,
   reservations,
-} from './data.js';
+} from "./data.js";
 
 document.body.appendChild(newHeader());
 displayContent();
 
 function addEvents() {
-  Array.from(document.querySelectorAll('.nav-btn')).forEach((btn) => {
-    btn.addEventListener('click', displayContent);
+  Array.from(document.querySelectorAll(".nav-btn")).forEach((btn) => {
+    btn.addEventListener("click", displayContent);
   });
-  document.querySelector('.logo').addEventListener('click', displayContent);
+  document.querySelector(".logo").addEventListener("click", displayContent);
 }
 
 function displayContent(e) {
-  let target = '';
+  let target = "";
   if (e) {
     target = e.currentTarget.id;
-    document.body.querySelector('#content').remove();
-    document.body.querySelector('.footer').remove();
+    document.body.querySelector("#content").remove();
+    document.body.querySelector(".footer").remove();
   }
 
   switch (target) {
-    case 'hours&locations':
+    case "hours&locations":
       document.body.appendChild(hoursAndLocations());
       document.body.appendChild(footer());
       break;
-    case 'menus':
+    case "menus":
       document.body.appendChild(menus());
       document.body.appendChild(footer());
       break;
-    case 'about':
+    case "about":
       document.body.appendChild(about());
       document.body.appendChild(footer());
       break;
-    case 'gallery':
+    case "gallery":
       document.body.appendChild(gallery());
       document.body.appendChild(footer());
       break;
-    case 'events':
+    case "events":
       document.body.appendChild(events());
       document.body.appendChild(footer());
       break;
-    case 'reservations':
+    case "reservations":
       document.body.appendChild(reservations());
       document.body.appendChild(footer());
       break;
